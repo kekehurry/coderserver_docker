@@ -1,6 +1,7 @@
 ### First Step
 
-`docker build -t coderserver .`
+`docker build --build-arg USERNAME=$(whoami) --build-arg USER_ID=$(id -u) -t codeserver .`
+`
 
 
 ### Second Step

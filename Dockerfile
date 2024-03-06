@@ -1,14 +1,13 @@
 FROM pytorch/pytorch:2.2.1-cuda11.8-cudnn8-runtime
 
+ARG USERNAME
+ARG USER_ID
+
 WORKDIR /workspace
 ENV HOME=/workspace
 ENV PATH=/workspace/.local/bin:$PATH
-
-# USERNAME && USER_ID
-RUN export USERNAME=$(whoami) && \
-    export USER_ID=$(id -u) && \
-    echo "USERNAME=$USERNAME" >> /etc/environment && \
-    echo "USER_ID=$USER_ID" >> /etc/environment
+ENV USERNAME=${USERNAME}
+ENV USER_ID=${USER_ID}
 
 ADD cert.pem /workspace/cert.pem
 ADD key.pem /workspace/key.pem
