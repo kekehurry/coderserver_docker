@@ -13,12 +13,12 @@ follow the official guidance of NECsys and connect to a matlaber node : https://
 
 ### Docker build
 
-`docker build --build-arg USERNAME=$(whoami) --build-arg USER_ID=$(id -u) -t codeserver .`
+`docker build --build-arg USERNAME=kaihu --build-arg USER_ID=8443 -t codeserver .`
 
 
 ### Docker run
 
-`docker run -itd -v /mas:/mas -v /u:/u -v /dtmp:/dtmp -v /tmp:/tmp -p $(id -u):8443 -u $(id -u):2000 -e YOUR_HOST=$(hostname) -e YOUR_USERNAME=$(whoami) -e YOUR_UID=$(id -u) -e "PASSWORD=$(whoami)" --name codeserver codeserver`
+`docker run -itd -v D:\codeserver:/workspace -p 8443:8443 -u 2000:2000 -e YOUR_HOST=10.29.159.180 -e YOUR_USERNAME=kaihu -e YOUR_UID=2000 -e PASSWORD=hk19931111 --name codeserver codeserver`
 
 
 ### ssl certificate

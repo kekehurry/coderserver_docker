@@ -18,24 +18,12 @@ RUN apt-get update \
         curl \
         sudo \
         git \
-        krb5-user \
-        kstart \
         libgl1-mesa-glx \
         libglib2.0-0 \
         libsm6 \
         libxrender1 \
         libxext6 \
     && rm -rf /var/lib/apt/lists/* \
-    && echo "MEDIA.MIT.EDU" > /tmp/default_realm.txt \
-    && echo "MEDIA.MIT.EDU" | sudo tee -a /etc/krb5.conf \
-    && rm /tmp/default_realm.txt \
-    && groupadd -g 2000 mlusers \
-    && useradd -g 2000 -u $USER_ID -m -s /bin/bash $USERNAME \
-    && echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
-    && chown -R $USERNAME:mlusers /workspace \
-    && mkdir -p /workspace/.cache \
-    && chown -R $USERNAME:mlusers /workspace/.cache \
-    && ln -s /u/$USERNAME \
     && curl -fsSL https://code-server.dev/install.sh | sh \
     && pip install ipykernel matplotlib ipywidgets
 
