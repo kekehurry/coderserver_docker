@@ -3,6 +3,10 @@
 
 This Dockerfile is particularly designed for easier use of the MIT Media Lab NECsys.
 
+### Connect NECsys
+
+follow the official guidance of NECsys and connect to a matlaber node : https://nuwiki.media.mit.edu/bin/view/Necsysdocs/MatlaberNotes
+
 ### Clone this repository
 
 `git clone https://github.com/kekehurry/coderserver_docker.git`
