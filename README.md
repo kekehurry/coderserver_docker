@@ -1,7 +1,7 @@
 
 ## Codeserver-Pytorch-Cuda Docker
 
-This Dockerfile is particularly designed for easier use of the MIT Media NECsys.
+This Dockerfile is particularly designed for easier use of the MIT Media Lab NECsys.
 
 ### Clone this repository
 
