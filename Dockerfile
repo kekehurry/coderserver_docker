@@ -20,6 +20,7 @@ RUN apt-get update \
         git \
         krb5-user \
         kstart \
+        libgl1-mesa-glx \
         libglib2.0-0 \
         libsm6 \
         libxrender1 \
