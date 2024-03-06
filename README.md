@@ -22,7 +22,7 @@ follow the official guidance of NECsys and connect to a matlaber node : https://
 
 
 ### ssl certificate
-download the cert.pem and add to the trusted list. Also, you can generate your own cert and key with the domain '*.media.mit.edu', and replace `cert.pem` and `key.pem`.
-I used `mkcert` to generate these files.
+download the cert.pem and add to the trusted list. Also, you can generate your own cert and key with the domain '*.media.mit.edu', and replace `cert.pem` & `key.pem`.
+I used [mkcert](https://github.com/FiloSottile/mkcert) to generate these files.
 
 
