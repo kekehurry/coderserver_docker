@@ -4,6 +4,12 @@ WORKDIR /workspace
 ENV HOME=/workspace
 ENV PATH=/workspace/.local/bin:$PATH
 
+# USERNAME && USER_ID
+RUN export USERNAME=$(whoami) && \
+    export USER_ID=$(id -u) && \
+    echo "USERNAME=$USERNAME" >> /etc/environment && \
+    echo "USER_ID=$USER_ID" >> /etc/environment
+
 ADD cert.pem /workspace/cert.pem
 ADD key.pem /workspace/key.pem
 
@@ -24,12 +30,12 @@ RUN apt-get update \
     && echo "MEDIA.MIT.EDU" | sudo tee -a /etc/krb5.conf \
     && rm /tmp/default_realm.txt \
     && groupadd -g 2000 mlusers \
-    && useradd -g 2000 -u 17885 -m -s /bin/bash kaihu \
-    && echo "kaihu ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
-    && chown -R kaihu:mlusers /workspace \
+    && useradd -g 2000 -u $USER_ID -m -s /bin/bash $USERNAME \
+    && echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
+    && chown -R $USERNAME:mlusers /workspace \
     && mkdir -p /workspace/.cache \
-    && chown -R kaihu:mlusers /workspace/.cache \
-    && ln -s /u/kaihu \
+    && chown -R $USERNAME:mlusers /workspace/.cache \
+    && ln -s /u/$USERNAME \
     && curl -fsSL https://code-server.dev/install.sh | sh \
     && pip install ipykernel matplotlib ipywidgets
 
