@@ -27,6 +27,7 @@ I used [mkcert](https://github.com/FiloSottile/mkcert) to generate these files.
 
 ### open codeserver in browser
 run this command in matlaber terminal to get the url for codeserver
+
 `echo "https://$(hostname).media.mit.edu:$(id -u)/"`
 
 
