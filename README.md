@@ -18,7 +18,7 @@ follow the official guidance of NECsys and connect to a matlaber node : https://
 
 ### Docker run
 
-`docker run -itd -v /mas:/mas -v /u:/u -v /dtmp:/dtmp -v /tmp:/tmp -p $(id -u):8443 -u $(id -u):2000 -e YOUR_HOST=$(hostname) -e YOUR_USERNAME=$(whoami) -e YOUR_UID=$(id -u) -e "PASSWORD=$(whoami)" --name codeserver codeserver`
+`docker run -itd -v /mas:/mas -v /u:/u -v /dtmp:/dtmp -v /tmp:/tmp -p $(id -u):8443 -u $(id -u):2000 -e YOUR_HOST=$(hostname) -e YOUR_USERNAME=$(whoami) -e YOUR_UID=$(id -u) -e "PASSWORD=$(whoami)" -e "KRB5CCNAME=FILE:/tmp/krb5cc_$(id -un)" --name codeserver codeserver`
 
 
 ### ssl certificate
