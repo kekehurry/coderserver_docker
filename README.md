@@ -25,4 +25,8 @@ follow the official guidance of NECsys and connect to a matlaber node : https://
 download the cert.pem and add to the trusted list. Also, you can generate your own cert and key with the domain '*.media.mit.edu', and replace `cert.pem` & `key.pem`.
 I used [mkcert](https://github.com/FiloSottile/mkcert) to generate these files.
 
+### open codeserver in browser
+run this command in matlaber terminal to get the url for codeserver
+`echo "https://$(hostname).media.mit.edu:$(id -u)/"`
+
 
