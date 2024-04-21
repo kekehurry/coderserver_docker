@@ -13,6 +13,8 @@ follow the official guidance of NECsys and connect to a matlaber node : https://
 
 ### Docker build
 
+`cd coderserver_docker`
+
 `docker build --build-arg USERNAME=$(whoami) --build-arg USER_ID=$(id -u) -t codeserver .`
 
 
